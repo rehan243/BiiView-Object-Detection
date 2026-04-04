@@ -86,47 +86,6 @@ Developed at **Verticiti**, handling a massive dataset of 11 million images and 
 | **Frontend** | JavaScript, Canvas API |
 | **Infrastructure** | Docker, GPU inference |
 
-## Project Structure
-
-```
-biiview-object-detection/
-├── detection/
-│   ├── sam_engine.py
-│   ├── yolo_detector.py
-│   ├── mask_generator.py
-│   └── object_tracker.py
-├── segmentation/
-│   ├── instance_segmentation.py
-│   ├── mask_refinement.py
-│   └── boundary_extraction.py
-├── matching/
-│   ├── product_matcher.py
-│   ├── visual_search.py
-│   ├── embedding_index.py
-│   └── catalog_connector.py
-├── video/
-│   ├── frame_extractor.py
-│   ├── stream_processor.py
-│   └── keyframe_detector.py
-├── api/
-│   ├── main.py
-│   ├── detection_routes.py
-│   └── websocket_stream.py
-├── frontend/
-│   ├── video_player.html
-│   ├── overlay_renderer.js
-│   └── product_cards.js
-├── models/
-│   ├── download_sam.py
-│   └── model_config.yaml
-├── infrastructure/
-│   ├── Dockerfile.gpu
-│   └── docker-compose.yml
-├── tests/
-├── requirements.txt
-└── README.md
-```
-
 ## Results
 
 | Metric | Value |
@@ -138,26 +97,10 @@ biiview-object-detection/
 | Objects tracked per frame | 50+ |
 | Product match accuracy | 85% |
 
-## Quick Start
+---
 
-```bash
-git clone https://github.com/rehan243/BiiView-Object-Detection.git
-cd BiiView-Object-Detection
+> **Source Code**: The production source code for this project is maintained in a private repository due to proprietary and client confidentiality requirements. This repository documents the architecture, design decisions, and technical approach. For code-level discussions or collaboration inquiries, feel free to reach out.
 
-pip install -r requirements.txt
-
-# Download SAM model
-python models/download_sam.py --model vit_h
-
-# Run detection on video
-python detection/sam_engine.py --input video.mp4 --output results/
-
-# Start interactive API
-uvicorn api.main:app --host 0.0.0.0 --port 8000
-
-# Process live camera feed
-python video/stream_processor.py --source 0 --display
-```
 
 ## Author
 
